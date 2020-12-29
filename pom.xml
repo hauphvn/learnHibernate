@@ -27,6 +27,19 @@
             <version>1.18.12</version>
             <scope>provided</scope>
         </dependency>
+<!--        Sử dụng cho second level cacher trong hibernate-->
+        <dependency>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+        <!--        Sử dụng cho second level cacher trong hibernate-->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>5.4.2.Final</version>
+        </dependency>
+
 
     </dependencies>
 </project>

@@ -38,6 +38,18 @@ Che giấu cơ chế lazy loading.
 
 - SQl là ngôn ngữ dùng trong database, HQL là ngôn ngữ dùng thao tác với các object sau khi đã query từ db ra.
 - Khi sử dụng HQL sẽ có những ưu điểm của SQL generation và caching.
+- Các tên table trong ngôn ngữ HQL là tên của class mapping trong java chứ ko phải tên table trong db.
+
+### Criteria API:
+- Cách thức truy vấn rõ ràng hơn HQL, dễ mở rộng và linh hoạt.
+- Ref [Link](https://www.baeldung.com/hibernate-criteria-queries) để biết thêm chi tiết.
+
+### Performance trong hibernate:
+
+- First level caching: Mặt định, khi ta truy vấn db để lấy ra object A thì khi session close, nêu mở session lại và truy vấn lại để lấy object A th
+ì hibernate sẽ lại tạo một câu select y hệt. Để ngăn sự truy vấn lặp lại đó ta sử dụng second level caching.
+- Second level caching: để không sử dụng default của hibernate thì ta phải dùng lib của bên thứ 3 như: ehcache, hibernate-ehcache. Sau đó, ta phải
+ annotation trong class cụ thể nào muốn second level cache với annotation `@Cache(usage= CacheConcurrencyStrategy.READ_ONLY)`
 ### Lỗi thường gặp
 
 - MappingException UnknownEntity: sửa lỗi ref: [stackoverflow](https://stackoverflow.com/a/34519170)

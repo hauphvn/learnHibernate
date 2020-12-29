@@ -1,7 +1,8 @@
 package com.coderzero.model;
 
 import lombok.Data;
-
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.Cache;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -18,4 +19,5 @@ public class Group {
     private String name;
     @ManyToMany
     private List<Fresher> my_freshers = new ArrayList<Fresher>();
+
 }
